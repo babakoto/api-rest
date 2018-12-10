@@ -1,6 +1,8 @@
 package com.youngdev.apirest.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,6 +19,7 @@ public class Livre {
     private String titreLivre;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "auteur_id")
+    @JsonBackReference
     Auteur auteur;
 
     public Livre(String titreLivre, Auteur auteur) {

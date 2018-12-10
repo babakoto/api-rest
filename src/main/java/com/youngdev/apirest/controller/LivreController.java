@@ -34,4 +34,9 @@ public class LivreController {
     List<Livre> listAllLivreByAuteur(@PathVariable int auteurId){
         return livreRepository.getLivreByAuteur_Id(auteurId);
     }
+
+    @GetMapping("/api/auteur")
+    List<Auteur> GetAuteurAll(){
+        return auteurRepository.findAll();
+    }
 }
